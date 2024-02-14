@@ -17,7 +17,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: 3.10
+          python-version: 3.8
 
       - name: Update Contributors
         run: python scripts/update_contributors.py "${{ github.actor }}" "${{ github.event_name }}" "${{ github.event.client_payload.pull_request.url }}" "${{ github.event.client_payload.pull_request.user.login }}" "${{ github.event.client_payload.pull_request.title }}" "${{ github.event.client_payload.pull_request.body }}"
