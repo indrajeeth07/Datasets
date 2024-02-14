@@ -1,5 +1,5 @@
 name: Update Contributors
-  
+
 on:
   pull_request:
     types:
@@ -23,15 +23,11 @@ jobs:
         run: python scripts/update_contributors.py "${{ github.actor }}" "${{ github.event_name }}" "${{ github.event.client_payload.pull_request.url }}" "${{ github.event.client_payload.pull_request.user.login }}" "${{ github.event.client_payload.pull_request.title }}" "${{ github.event.client_payload.pull_request.body }}"
 
       - name: Commit Changes
-        run: |
-          git config --global user.email "actions@github.com"
-          git config --global user.name "GitHub Actions"
-          git checkout -b update-contributors
-          git add contributions/
-          git commit -m "Update contributors [skip ci]"
-
-      - name: Push Changes
-        uses: ad-m/github-push-action@v0.7.0
+        uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          github_token: ${{ secrets.TOKEN }}
-          branch: update-contributors
+          commit_message: 'Update Contributors'
+          commit_options: '--no-verify'
+          repository: .
+          commit_user_name: GitHub Actions
+          commit_user_email: actions@github.com
+          commit_author: GitHub Actions <actions@github.com>
