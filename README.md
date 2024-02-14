@@ -1,4 +1,4 @@
-# EnglishWordsDataset
+# EnglishWordsDataset.
 
 Welcome to the EnglishWordsDataset repository!
 
