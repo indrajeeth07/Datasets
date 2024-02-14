@@ -33,5 +33,5 @@ jobs:
       - name: Push Changes
         uses: ad-m/github-push-action@v0.7.0
         with:
-          github_token: ${{ secrets.GIT_KEY }}
+          github_token: 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
           branch: update-contributors
