@@ -2,7 +2,7 @@
 
 Welcome to the EnglishWordsDataset repository!
 
-## Overview
+##Overview
 
 This repository serves as a comprehensive dataset of English words, curated and maintained with the aim of continuously expanding the vocabulary. We invite contributors to submit pull requests (PRs) with new words, ensuring that the dataset remains dynamic and up-to-date.
 
