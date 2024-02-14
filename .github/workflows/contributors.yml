@@ -1,8 +1,4 @@
 name: Update Contributors
-
-permissions:
-  contents: read
-  pages: write    
   
 on:
   pull_request:
@@ -35,5 +31,7 @@ jobs:
           git commit -m "Update contributors [skip ci]"
 
       - name: Push Changes
-        run: |
-          git push origin update-contributors
+        uses: ad-m/github-push-action@v0.7.0
+        with:
+          github_token: ${{ secrets.GIT_KEY }}
+          branch: update-contributors
